@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageClassification", "Imag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPricePredictor", "CarPricePredictor\CarPricePredictor.csproj", "{6D955068-3BBB-44F9-8198-9EE51ED54333}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentaryVotes", "CommentaryAggresion\CommentaryVotes.csproj", "{21510F08-282C-41AE-B8EC-4F10DD0BE8D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{6D955068-3BBB-44F9-8198-9EE51ED54333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D955068-3BBB-44F9-8198-9EE51ED54333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D955068-3BBB-44F9-8198-9EE51ED54333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21510F08-282C-41AE-B8EC-4F10DD0BE8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21510F08-282C-41AE-B8EC-4F10DD0BE8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21510F08-282C-41AE-B8EC-4F10DD0BE8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21510F08-282C-41AE-B8EC-4F10DD0BE8D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6D955068-3BBB-44F9-8198-9EE51ED54333} = {1363F016-229F-4536-AC70-2531CD7AD992}
+		{21510F08-282C-41AE-B8EC-4F10DD0BE8D1} = {A4357FAA-2FB7-4D27-ABB6-C908CA4D825B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6E7DB06-D8FA-44DE-9760-3D7CCF71454A}

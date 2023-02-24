@@ -36,7 +36,8 @@ namespace CarPricePredictor
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"brand", @"brand"),new InputOutputColumnPair(@"model", @"model"),new InputOutputColumnPair(@"gearType", @"gearType"),new InputOutputColumnPair(@"color", @"color")}, outputKind: OneHotEncodingEstimator.OutputKind.Indicator)      
+            var pipeline = mlContext.Transforms
+				.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"brand", @"brand"),new InputOutputColumnPair(@"model", @"model"),new InputOutputColumnPair(@"gearType", @"gearType"),new InputOutputColumnPair(@"color", @"color")}, outputKind: OneHotEncodingEstimator.OutputKind.Indicator)      
                                     .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"year", @"year"),new InputOutputColumnPair(@"totalKm", @"totalKm"),new InputOutputColumnPair(@"HorsePowers", @"HorsePowers")}))      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"fuelType",outputColumnName:@"fuelType"))      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"brand",@"model",@"gearType",@"color",@"year",@"totalKm",@"HorsePowers",@"fuelType"}))      
