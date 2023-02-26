@@ -1,0 +1,86 @@
+﻿{
+  "TrainingTime": 30,
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "D:\\MyGithubRepos\\ML.Net-Demos\\CommentaryAggresion\\commentaries.txt",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "text",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "prediction",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 1
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 0,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.12109071229634324,
+        "RuntimeInSeconds": 5.7909998893737793
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastTreeBinary",
+        "Score": 0.8757215948793,
+        "RuntimeInSeconds": 6.4149999618530273
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.12109071229634324,
+        "RuntimeInSeconds": 6.1079998016357422
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastForestBinary",
+        "Score": 0.86886351783645832,
+        "RuntimeInSeconds": 10.75100040435791
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.12109071229634324,
+        "RuntimeInSeconds": 6.3179998397827148
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastForestBinary",
+        "Score": 0.86886351783645832,
+        "RuntimeInSeconds": 11.11299991607666
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"FeaturizeText\",\"Inputs\":[\"text\"],\"Outputs\":[\"text\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"text\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"prediction\",\"FeatureColumnName\":\"Features\",\"NumberOfTrees\":\"4\",\"FeatureFraction\":\"1\",\"EstimatorType\":\"FastForestBinary\",\"Inputs\":[\"prediction\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"prediction\",\"ScoreColumnName\":\"Score\",\"EstimatorType\":\"Naive\",\"Inputs\":null,\"Outputs\":null}]",
+    "MetricName": "Accuracy"
+  },
+  "Type": "TrainingConfig",
+  "Version": 1
+}

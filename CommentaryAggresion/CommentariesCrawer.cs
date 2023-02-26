@@ -1,21 +1,27 @@
-﻿using AngleSharp.Html.Dom;
-using AngleSharp.Html.Parser;
-using System.IO;
+﻿
+using Helpers;
+using System.Reflection;
 using System.Text;
 
 namespace CommentaryAggresion
 {
 	public class CommentariesCrawer
 	{
+		private CrawlingHelper helper;
+		public CommentariesCrawer()
+		{
+			this.helper = new CrawlingHelper();
+		}
 		public async Task GetCommentaries()
 		{
+			
 			var page = 1;
 			Console.OutputEncoding = Encoding.UTF8;
 			var newsNumber = 561000;
 			while (true)
 			{
 				var endpoint = $"https://www.dnes.bg/politika/2023/02/24/bsp-zove-diplomaciiata-na-sloji-krai-na-voinata-v-ukraina.{newsNumber},{page}";
-				var document = await this.GetDocument(endpoint);
+				var document = await this.helper.GetDocument(endpoint);
 
 				var commentaries = document.All.Where(x => x.ClassName == "commen_cont").ToList();
 				if (!commentaries.Any())
@@ -65,38 +71,21 @@ namespace CommentaryAggresion
 
 		private async Task SaveCommentData(string textContent, bool positive)
 		{
-			var path = "commentaries.txt";
+			var currentLocation = Assembly.GetEntryAssembly().Location;
+
+			var path = Path.GetFullPath(Path.Combine(currentLocation, @"..\..\..\..\commentaries.txt"));
 			var content = textContent.Replace("\"", string.Empty).Replace(",", string.Empty);
 			try
 			{
 				using (StreamWriter file = new StreamWriter(path, true))
 				{
-					await file.WriteLineAsync($"{textContent},{positive}");
+					await file.WriteLineAsync($"{content},{positive}");
 				}
 			}
 			catch (Exception)
 			{
 				throw;
 			}
-		}
-
-		public async Task<IHtmlDocument> GetDocument(string uri)
-		{
-			var httpClient = new HttpClient();
-			var request = await httpClient.GetAsync(uri);
-
-			var response = await request.Content.ReadAsStreamAsync();
-			var parser = new HtmlParser();
-			var document = parser.ParseDocument(response);
-			return document;
-		}
-
-		public async Task<IHtmlDocument> ParseDocument(HttpResponseMessage httpResponseMessage)
-		{
-			var parser = new HtmlParser();
-			var stringContent = await httpResponseMessage.Content.ReadAsStringAsync();
-			var document = parser.ParseDocument(stringContent);
-			return document;
 		}
 	}
 }
