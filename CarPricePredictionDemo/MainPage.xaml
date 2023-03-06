@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarPricePredictionDemo.MainPage"
+			xmlns:viewmodel="clr-namespace:CarPricePredictionDemo.ViewModels"
+			 x:DataType="viewmodel:MainPageViewModel"
+			 >
+	<ScrollView>
+		<VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+			<Picker ItemsSource="{Binding Model.BrandModels.Keys}" />
+			<Picker ItemsSource="{Binding Model.BrandModels.Values}"/>
+			<Picker  Title=" Тип Скорости" ItemsSource="{Binding Model.GearTypes}" />
+			<Picker Title=" Тип Гориво" ItemsSource="{Binding Model.FuelTypes}"/>
+			<Picker Title="Цвят" ItemsSource="{Binding Model.Colors}"/>
+			<Slider Minimum="1900" Maximum="2023" />
+		</VerticalStackLayout>
+	</ScrollView>
+
+</ContentPage>

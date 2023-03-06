@@ -1,5 +1,7 @@
-﻿using CommentaryVotes;
+﻿using CommentaryVotes.Models;
 using Microsoft.ML;
+using System.Reflection;
+using static Microsoft.ML.DataOperationsCatalog;
 
 namespace CommentaryAggresion
 {
@@ -7,20 +9,7 @@ namespace CommentaryAggresion
 	{
 		static async Task Main(string[] args)
 		{
-			var crawer = new CommentariesCrawer();
-			//await crawer.GetCommentaries();
 
-			Console.WriteLine("Enter your commentary here:");
-
-			var comment = Console.ReadLine();
-			var engine = new CommentaryLikes();
-
-			var obj = new CommentaryLikes.ModelInput
-			{
-				Text = comment
-			};
-
-			//var result = engine.Predict(obj);
 		}
 	}
 }
