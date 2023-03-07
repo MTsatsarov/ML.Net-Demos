@@ -1,41 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IssueCategorizer.MainPage">
+             x:Class="IssueCategorizer.MainPage"
+			 xmlns:viewmodel ="clr-namespace:IssueCategorizer.ViewModels"
+			 x:DataType="viewmodel:MainPageViewModel"
+			 >
 
-    <ScrollView>
-        <VerticalStackLayout
+	<ScrollView>
+		<VerticalStackLayout  
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+			<Label FontSize="Title"  HorizontalOptions="Center" Text="Issue Categorizer"/>
+			<Border WidthRequest="500"  StrokeShape="RoundRectangle 40,0,0,40" Background="#2B0B98" StrokeThickness="4">
+				<Border.Stroke>
+					<LinearGradientBrush EndPoint="0,1">
+						<GradientStop Color="Orange"
+                          Offset="0.1" />
+						<GradientStop Color="Brown"
+                          Offset="1.0" />
+					</LinearGradientBrush>
+				</Border.Stroke>
+				<VerticalStackLayout WidthRequest="300" HorizontalOptions="Center" Spacing="10" Padding="15">
+					<Label Text="Issue Title"/>
+					<Entry   Text="{Binding InputModel.Title}" />
+					
+					<Label Text="Issue Description"/>
+					<Entry Text="{Binding InputModel.Description}"/>
+					<Button Text="Check area" Command="{Binding GetAreaCommand}" Margin="15"/>
+					<Label Text="Predicted area"/>
+					<Entry Text="{Binding Area}" IsReadOnly="True"/>
+				</VerticalStackLayout>
+			</Border>
+		</VerticalStackLayout>
+	</ScrollView>
 
 </ContentPage>
