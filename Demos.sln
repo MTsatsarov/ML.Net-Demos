@@ -17,9 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileApp", "MobileApp\Mobi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPricePredictionDemo", "CarPricePredictionDemo\CarPricePredictionDemo.csproj", "{65FB12C7-75E3-4616-AF8A-6507BF060C88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IssueCategorizer", "IssueCategorizer\IssueCategorizer.csproj", "{2528EB32-AE03-415A-B955-AC1E1988116D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueCategorizer", "IssueCategorizer\IssueCategorizer.csproj", "{2528EB32-AE03-415A-B955-AC1E1988116D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubIssueModelCreator", "GitHubIssueModelCreator\GitHubIssueModelCreator.csproj", "{7E0488D5-439C-4383-9FA4-90A9CCBE7290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHubIssueModelCreator", "GitHubIssueModelCreator\GitHubIssueModelCreator.csproj", "{7E0488D5-439C-4383-9FA4-90A9CCBE7290}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Recommendation", "Recommendation", "{063D0E07-2815-4424-B5E9-144CFD9C985D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRecommendationModelCreator", "MovieRecommendationModelCreator\MovieRecommendationModelCreator.csproj", "{AD3E7760-74AC-4C50-B861-7B8A755CFC09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,10 @@ Global
 		{7E0488D5-439C-4383-9FA4-90A9CCBE7290}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E0488D5-439C-4383-9FA4-90A9CCBE7290}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E0488D5-439C-4383-9FA4-90A9CCBE7290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3E7760-74AC-4C50-B861-7B8A755CFC09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3E7760-74AC-4C50-B861-7B8A755CFC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3E7760-74AC-4C50-B861-7B8A755CFC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3E7760-74AC-4C50-B861-7B8A755CFC09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{65FB12C7-75E3-4616-AF8A-6507BF060C88} = {1363F016-229F-4536-AC70-2531CD7AD992}
 		{2528EB32-AE03-415A-B955-AC1E1988116D} = {D446C85F-B5FC-46D1-A47A-A71A73CC6334}
 		{7E0488D5-439C-4383-9FA4-90A9CCBE7290} = {D446C85F-B5FC-46D1-A47A-A71A73CC6334}
+		{AD3E7760-74AC-4C50-B861-7B8A755CFC09} = {063D0E07-2815-4424-B5E9-144CFD9C985D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6E7DB06-D8FA-44DE-9760-3D7CCF71454A}
