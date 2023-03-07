@@ -10,8 +10,9 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-			<Picker ItemsSource="{Binding Model.BrandModels.Keys}" />
-			<Picker ItemsSource="{Binding Model.BrandModels.Values}"/>
+			<Picker ItemsSource="{Binding Model.Brands}" SelectedIndex="0" SelectedItem="{Binding .}" SelectedIndexChanged="Picker_SelectedIndexChanged" >
+			</Picker>
+			<Picker ItemsSource="{Binding Model.Models}" SelectedIndex="0" />
 			<Picker  Title=" Тип Скорости" ItemsSource="{Binding Model.GearTypes}" />
 			<Picker Title=" Тип Гориво" ItemsSource="{Binding Model.FuelTypes}"/>
 			<Picker Title="Цвят" ItemsSource="{Binding Model.Colors}"/>
