@@ -10,6 +10,7 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
+			
 			<HorizontalStackLayout HorizontalOptions="CenterAndExpand">
 			<Entry MinimumWidthRequest="300" Text="{Binding Text}" Placeholder="Enter your commentary here" Margin="19"/>
 				<Button Text="Check"  Command="{Binding PredictScoreCommand}" />

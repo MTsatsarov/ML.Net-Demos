@@ -25,9 +25,9 @@ namespace MobileApp.ViewModels
 			var result = this.commentaryService.Predict(this.Text);
 			var predictedLabel =(int)(result.PredictedLabel);
 			var sentiment = result.PredictedLabel == 1 ? "sentiment" : "not sentiment";
-			var score = result.Score[predictedLabel].ToString("F2");
+			var score = Math.Round(result.Score[predictedLabel] * 100);
 
-			this.Result = $"Your commentary has {score} % to be {sentiment} !";
+			this.Result = $"Your commentary has {score}% to be {sentiment} !";
 		}
 	}
 }
