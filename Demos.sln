@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageClassification", "Imag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{69BA1782-110D-42C8-8600-93B2ACCF0450}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileApp", "MobileApp\MobileApp.csproj", "{1B3492B5-C292-4D0F-A89E-3237EBD9F31C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommentarySentiment", "MobileApp\CommentarySentiment.csproj", "{1B3492B5-C292-4D0F-A89E-3237EBD9F31C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPricePredictionDemo", "CarPricePredictionDemo\CarPricePredictionDemo.csproj", "{65FB12C7-75E3-4616-AF8A-6507BF060C88}"
 EndProject
