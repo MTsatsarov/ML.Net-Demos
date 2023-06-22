@@ -13,6 +13,7 @@ namespace MobileApp.Services
 
 		public ModelBuilder.ModelOutput Predict(string text)
 		{
+
 			var predictionModel = this.enginePool.Predict(new ModelBuilder.ModelInput() { Comment = text });
 
 			return predictionModel;
